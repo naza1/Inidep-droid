@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inidep2.MainPage"
+             xmlns:validators="clr-namespace:Inidep2.Validators;assembly=Inidep2">
+    <ScrollView>
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Inidep App!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+        <Button Text="Take Photo" VerticalOptions="Start" Clicked="Button_Clicked">
+        </Button>
+        <Entry x:Name="Email" Placeholder="Enter email" PlaceholderColor="DarkGray" MaxLength="25">
+            <Entry.Behaviors>
+                <validators:EmailValidatorBehavior></validators:EmailValidatorBehavior>
+            </Entry.Behaviors>
+        </Entry>
+        <Label x:Name="EmailValidationError"></Label>
+        <Editor x:Name="EditorField" Placeholder="Enter text here" PlaceholderColor="Olive" MaxLength="50" AutoSize="TextChanges" />
+        <Label x:Name="LatitudeLabel" Text="Latitude: "></Label>
+        <Label x:Name="LongitudeLabel" Text="Longitude: "></Label>
+        <Image x:Name="MyImage" HeightRequest="150" WidthRequest="250"></Image>
+        <Button Text="Send Photo and Geolocation" x:Name="ButtonSent" Clicked="Button_Sent">
+        </Button>
+    </StackLayout>
+    </ScrollView>
+</ContentPage>
